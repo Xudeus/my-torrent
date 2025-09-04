@@ -13,7 +13,7 @@ exports.handler = async function(event, context) {
 
   try {
     // Apibay API (Pirate Bay mirror)
-    const response = await fetch(`https://apibay.org/q.php?q=${encodeURIComponent(query)}`, {
+    const response = await fetch(`https://apibay.org/q.php`, {
       headers: {
         "x-requested-with": "XMLHttpRequest" // required header
       }
