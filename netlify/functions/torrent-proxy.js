@@ -12,15 +12,19 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    // Using a sample torrent API - replace with your preferred API
-    const response = await fetch(`https://torrent-api-wrapper.vercel.app/api/search/${encodeURIComponent(query)}`);
-    
+    // Apibay API (Pirate Bay mirror)
+    const response = await fetch(`https://apibay.org/q.php?q=${encodeURIComponent(query)}`, {
+      headers: {
+        "x-requested-with": "XMLHttpRequest" // required header
+      }
+    });
+
     if (!response.ok) {
       throw new Error(`API responded with status ${response.status}`);
     }
-    
+
     const data = await response.json();
-    
+
     return {
       statusCode: 200,
       headers: {
