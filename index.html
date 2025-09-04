@@ -443,7 +443,7 @@
             const closePlayer = document.getElementById('closePlayer');
             
             // Use Netlify Functions proxy instead of CORS-anywhere
-            const API_URL = '/.netlify/functions/torrent-proxy?query=" + encodeURIComponent(query)';
+            const API_URL = '/.netlify/functions/torrent-proxy';
             
             // Search function
             async function searchTorrents(query) {
@@ -922,3 +922,4 @@
 </body>
 
 </html>
+
